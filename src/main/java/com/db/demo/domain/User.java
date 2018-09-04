@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 public class User {
@@ -13,13 +14,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUser;
     private String name;
-    private int age;
+    private LocalDate dateOfBirth;
     private String login;
     private String password;
 
-    public User(String name, int age, String login, String password) {
+    public User(String name, LocalDate dateOfBirth, String login, String password) {
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.login = login;
         this.password = password;
     }
@@ -40,12 +41,12 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getAge() {
+        return dateOfBirth;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getLogin() {
